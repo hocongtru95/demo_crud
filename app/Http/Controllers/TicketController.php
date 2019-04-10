@@ -11,12 +11,11 @@ class TicketController extends Controller
     public function index()
     {
         $tickets = Tickets::where('user_id', auth()->user()->id)->get();
-        return view('ticket.home', compact('tickets'));
+        return view('ticket.index', compact('tickets'));
     }
 
     public function create()
     {
-
         return view('ticket.create');
     }
     public function store(Request $request)
@@ -28,7 +27,7 @@ class TicketController extends Controller
         ]);
 
         $ticket->saveTicket($data);
-        return redirect('ticket')->with('New support ticket has been created! Wait sometime to get resolved');
+        return redirect('ticket')->with('success', 'New support ticket has been created! Wait sometime to get resolved');
     }
 
     public function edit($id)

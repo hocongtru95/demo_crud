@@ -1,39 +1,30 @@
-@extends('layouts.app')
+@extends('ticket.layout.app')
+@section('title', 'Create new Ticket')
 
 @section('content')
-    <div class="container">
-        @if ($errors->any())
-            <div class="alert alert-danger">
-                <ul>
-                    @foreach ($errors->all() as $error)
-                        <li>{{ $error }}</li>
-                    @endforeach
-                </ul>
-            </div><br />
-        @endif
-        <div class="row">
-            <table style="margin-top: 50px;">
-                <form method="post" action="{{url('/ticket/create')}}">
-                    <div class="form-group">
-                        <input type="hidden" name="_token" value="{{csrf_token()}}">
-                        <tr>
-                            <td><label for="title">Ticket Title:</label></td>
-                            <td><input type="text" class="form-control" name="title"/></td>
-                        </tr>
+    <div class="row">
+        <div class="col-md-6">
+            <form action="{{url('/ticket/create')}}" method="post">
+                {{ csrf_field() }}
+                <div class="card">
+                    <div class="card-header">
+                        <div class="card-title">Create new Ticket</div>
                     </div>
-                    <div class="form-group">
-                        <tr>
-                            <td><label for="description">Ticket Description:</label></td>
-                            <td><textarea cols="21" rows="5" class="form-control" name="description"></textarea></td>
-                        </tr>
+                    <div class="card-body">
+                        <div class="form-group">
+                            <label for="email">Email Address</label>
+                            <input type="text" class="form-control" name="title" id="email" placeholder="Enter title">
+                        </div>
+                        <div class="form-group">
+                            <label for="comment">Description</label>
+                            <textarea class="form-control" id="comment" name="description" rows="5"></textarea>
+                        </div>
                     </div>
-                    <tr>
-                        <td><button type="submit" class="btn btn-primary">Create</button></td>
-                        <td></td>
-                    </tr>
-
-                </form>
-            </table>
+                    <div class="card-action">
+                        <button type="submit" class="btn btn-success">Submit</button>
+                    </div>
+                </div>
+            </form>
         </div>
     </div>
 @endsection
