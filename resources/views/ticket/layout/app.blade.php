@@ -8,6 +8,9 @@
     <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Nunito:200,200i,300,300i,400,400i,600,600i,700,700i,800,800i,900,900i">
     <link rel="stylesheet" href="{{asset('public/admin_dashboard/css/ready.css')}}">
     <link rel="stylesheet" href="{{asset('public/admin_dashboard/css/demo.css')}}">
+    <link rel="stylesheet" href="{{asset('public/admin_dashboard/css/simplemde.min.css')}}">
+    <script src="{{asset('public/admin_dashboard/js/simplemde.min.js')}}"></script>
+
 </head>
 <body>
 <div class="wrapper">
@@ -237,6 +240,7 @@
     </div>
 </div>
 </body>
+
 <script src="{{asset('public/admin_dashboard/js/core/jquery.3.2.1.min.js')}}"></script>
 <script src="{{asset('public/admin_dashboard/js/plugin/jquery-ui-1.12.1.custom/jquery-ui.min.js')}}"></script>
 <script src="{{asset('public/admin_dashboard/js/core/popper.min.js')}}"></script>
@@ -250,4 +254,5 @@
 <script src="{{asset('public/admin_dashboard/js/plugin/jquery-scrollbar/jquery.scrollbar.min.js')}}"></script>
 <script src="{{asset('public/admin_dashboard/js/ready.min.js')}}"></script>
 <script src="{{asset('public/admin_dashboard/js/demo.js')}}"></script>
+
 </html>

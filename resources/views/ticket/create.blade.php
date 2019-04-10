@@ -2,6 +2,7 @@
 @section('title', 'Create new Ticket')
 
 @section('content')
+
     <div class="row">
         <div class="col-md-6">
             <form action="{{url('/ticket/create')}}" method="post">
@@ -12,12 +13,13 @@
                     </div>
                     <div class="card-body">
                         <div class="form-group">
-                            <label for="email">Email Address</label>
+                            <label for="email">Title</label>
                             <input type="text" class="form-control" name="title" id="email" placeholder="Enter title">
                         </div>
                         <div class="form-group">
                             <label for="comment">Description</label>
-                            <textarea class="form-control" id="comment" name="description" rows="5"></textarea>
+
+                            <textarea id="demo1" name="description"></textarea>
                         </div>
                     </div>
                     <div class="card-action">
@@ -27,4 +29,10 @@
             </form>
         </div>
     </div>
+    <script>
+        new SimpleMDE({
+            element: document.getElementById("demo1"),
+            spellChecker: false,
+        });
+    </script>
 @endsection
