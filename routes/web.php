@@ -15,6 +15,10 @@ Auth::routes();
 
 Route::get('/home', 'HomeController@index')->name('home');
 
+Route::get('/', function () {
+    echo "somthing";
+});
+
 Route::prefix('ticket')->group(function () {
     //mac dinh
     Route::get('/', 'TicketController@index');
